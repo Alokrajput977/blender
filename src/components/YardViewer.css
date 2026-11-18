@@ -1,0 +1,69 @@
+.yard-viewer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #b9c9da;
+  cursor: grab;
+}
+
+.yard-viewer:active {
+  cursor: grabbing;
+}
+
+.yard-viewer canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+/* HTML label layer drawn on top of the canvas */
+.yard-label-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.machine-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px 3px 7px;
+  font: 600 12px/1.2 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: rgba(20, 24, 30, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  transform: translateY(-4px);
+}
+
+.machine-label .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+}
+
+.machine-label[data-status='moving'] .dot {
+  background: #33d17a;
+  box-shadow: 0 0 8px #33d17a;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.machine-label[data-status='nogps'] {
+  opacity: 0.55;
+}
+
+.machine-label[data-status='nogps'] .dot {
+  background: #9a9a9a;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.35);
+  }
+}

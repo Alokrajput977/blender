@@ -1,0 +1,64 @@
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #27466b 0%, #8aa6c2 100%);
+  z-index: 20;
+}
+
+.loading-card {
+  width: min(420px, 90vw);
+  padding: 28px 26px;
+  color: #eef3f8;
+  text-align: center;
+  background: rgba(14, 18, 24, 0.7);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.loading-card h2 {
+  margin: 0 0 18px;
+  font-size: 18px;
+}
+
+.bar {
+  height: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffc400, #ff7a00);
+  transition: width 0.2s ease;
+}
+
+.pct {
+  margin: 10px 0 0;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.loading-card p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.loading-card code {
+  padding: 1px 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.loading-card pre {
+  max-height: 120px;
+  overflow: auto;
+  padding: 10px;
+  font-size: 11px;
+  text-align: left;
+  white-space: pre-wrap;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+}
